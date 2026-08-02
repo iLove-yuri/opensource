@@ -285,9 +285,6 @@ local function AutoHeal()
             local ok, err = pcall(function()
                 Modules.Heal.Activate(nil, char, nil)
             end)
-            if not ok then
-                notyuri("Error in [AutoHeal]: " .. tostring(err))
-            end
         end
     end
 end
@@ -305,7 +302,7 @@ local function CancelRagdoll()
         DashRemote:FireServer("Forward")
         task.wait(0.1)
         if (tick() - start) > 5 then
-            notyuri("[AutoFarm] Ragdolled attribute never cleared, timed out")
+            
             break
         end
     end
