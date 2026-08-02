@@ -155,7 +155,7 @@ local function fire_event(signal, ...)
             end
         end
     else
-        notyuri("Your executor does not support firesignal or getconnections.")
+        warn("Your executor does not support firesignal or getconnections.")
     end
 end
 local Remotes = {
@@ -213,7 +213,7 @@ local function SafeLoop(name, func)
         local success, err = pcall(func)
         if not success then
             Library:Notify("Error in ["..name.."]: "..tostring(err), 10)
-            notyuri("Error in ["..name.."]: "..tostring(err))
+            warn("Error in ["..name.."]: "..tostring(err))
         end
     end
 end
@@ -846,5 +846,5 @@ Library:Notify("Yuri!", 5)
 end)
 if not eh_success then
     Library:Notify("ERROR: " .. tostring(err), 4)
-    notyuri("ERROR: " .. tostring(err))
+    warn("ERROR: " .. tostring(err))
 end
