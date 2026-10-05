@@ -1,4 +1,4 @@
-if getgenv().ayasemiyatongekissazumirisa then
+if getgenv().yurikiskis then
     warn("yuri")
     return
 end
@@ -49,7 +49,7 @@ local repo = "https://raw.githubusercontent.com/iLove-yuri/Linoria/main/"
 local Library = loadstring(game:HttpGet(repo .. "Library.lua"))()
 local ThemeManager = loadstring(game:HttpGet(repo .. "addons/ThemeManager.lua"))()
 local SaveManager = loadstring(game:HttpGet(repo .. "addons/SaveManager.lua"))()
-getgenv().ayasemiyatongekissazumirisa = true
+getgenv().yurikiskis = true
 local Options = Library.Options
 local Toggles = Library.Toggles
 Library.ShowToggleFrameInKeybinds = true
@@ -1283,7 +1283,7 @@ MenuGroup:AddDivider()
 MenuGroup:AddLabel("Menu bind")
         :AddKeyPicker("MenuKeybind", { Default = "U", NoUI = true, Text = "Menu keybind" })
 MenuGroup:AddButton("Unload", function()
-    getgenv().ayasemiyatongekissazumirisa = false
+    getgenv().yurikiskis = false
     Shared.Farm = false
     if antiAFKConn and antiAFKConn.Enable then pcall(function() antiAFKConn:Enable() end) end
     if Support.FPS then pcall(function() setfpscap(2000) end) end
